@@ -63,6 +63,10 @@ const Minter = (props) => {
   };
 
   const onMintPressed = async () => {
+     if (!walletAddress) {
+      alert("Please connect to the wallet first.");
+      return;
+    }
     const { success, status } = await mintNFT(url, name, description);
     setStatus(status);
     if (success) {
@@ -76,6 +80,10 @@ const Minter = (props) => {
 
   //3 Pack NFT
   const onMintPressed_3Pack = async () => {
+     if (!walletAddress) {
+      alert("Please connect to the wallet first.");
+      return;
+    }
     const { success, status } = await mintNFT_3Pack(url, name, description);
     setStatus(status);
     if (success) {
@@ -87,6 +95,10 @@ const Minter = (props) => {
 
     //5 Pack NFT
     const onMintPressed_5Pack = async () => {
+       if (!walletAddress) {
+      alert("Please connect to the wallet first.");
+      return;
+    }
       const { success, status } = await mintNFT_5Pack(url, name, description);
       setStatus(status);
       if (success) {
